@@ -4,42 +4,42 @@
 // Concept clé: Arrays et boucles for
 // ========== DONNÉES DES ARTICLES ==========
 $articles = [
-[
-"title" => "Mon Premier Article",
-"excerpt" => "J'ai découvert comment faire un blog statique. C'est
+    [
+        "title" => "Mon Premier Article",
+        "excerpt" => "J'ai découvert comment faire un blog statique. C'est
 fascinant!",
-"category" => "HTML"
-],
-[
-"title" => "HTML et Sémantique",
-"excerpt" => "Pourquoi utiliser les bons éléments HTML? Les moteurs de
+        "category" => "HTML"
+    ],
+    [
+        "title" => "HTML et Sémantique",
+        "excerpt" => "Pourquoi utiliser les bons éléments HTML? Les moteurs de
 recherche comprennent mieux.",
-"category" => "HTML"
-],
-[
-"title" => "CSS Responsive",
-"excerpt" => "Faire un site qui marche sur tous les appareils. Flexbox et
+        "category" => "HTML"
+    ],
+    [
+        "title" => "CSS Responsive",
+        "excerpt" => "Faire un site qui marche sur tous les appareils. Flexbox et
 Media Queries.",
-"category" => "CSS"
-],
-[
-"title" => "JavaScript Basics",
-"excerpt" => "JavaScript rend votre site interactif. Écoutez les clics,
+        "category" => "CSS"
+    ],
+    [
+        "title" => "JavaScript Basics",
+        "excerpt" => "JavaScript rend votre site interactif. Écoutez les clics,
 changez le contenu.",
-"category" => "JavaScript"
-],
-[
-"title" => "Bootstrap Composants",
-"excerpt" => "Bootstrap nous donne des cartes, navbars, boutons, et bien
+        "category" => "JavaScript"
+    ],
+    [
+        "title" => "Bootstrap Composants",
+        "excerpt" => "Bootstrap nous donne des cartes, navbars, boutons, et bien
 plus. Réutilisables.",
-"category" => "HTML"
-],
-[
-"title" => "Responsive Design",
-"excerpt" => "Votre blog doit s'adapter aux téléphones. CSS Media Queries
+        "category" => "HTML"
+    ],
+    [
+        "title" => "Responsive Design",
+        "excerpt" => "Votre blog doit s'adapter aux téléphones. CSS Media Queries
 le font automatiquement.",
-"category" => "CSS"
-]
+        "category" => "CSS"
+    ]
 ];
 
 //var_dump($articles); // Pour débogage
@@ -76,92 +76,77 @@ le font automatiquement.",
         <!-- Section: Articles -->
         <h2 class="mt-5">Mes Articles</h2>
 
-        <!-- Grille d'articles -->
+        <!-- Grille d'articles générés avec PHP -->
         <div class="row g-3 mt-3" id="conteneurArticles">
+            <?php
+            // Boucle for : parcourir les 3 premiers articles (affichés immédiatement)
+            for ($i = 0; $i < 3; $i++):
+            ?>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($articles[$i]["title"]); ?></h5>
+                            <p class="card-text"><?php echo htmlspecialchars($articles[$i]["excerpt"]); ?></p>
+                            <p class="card-text">
+                                <small class="text-muted">Catégorie: <?php echo
+                                                                        htmlspecialchars($articles[$i]["category"]); ?></small>
+                            </p>
+                            <a href="#" class="btn btn-primary">Lire plus</a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endfor;
+            ?>
+        </div>
 
-            <!-- Article 1 -->
+        <!-- Articles cachés (montrés au clic du bouton) -->
+        <div class="row g-3 mt-3" id="articlesCachés">
+
+            <!-- Article 4 -->
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Mon Premier Article</h5>
-                        <p class="card-text">J'ai découvert comment faire un blog statique.
-                            C'est fascinant!</p>
+                        <h5 class="card-title">JavaScript Basics</h5>
+                        <p class="card-text">JavaScript rend votre site interactif. Écoutez
+                            les clics, changez le contenu.</p>
                         <a href="#" class="btn btn-primary">Lire plus</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Article 2 -->
+            <!-- Article 5 -->
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">HTML et Sémantique</h5>
-                        <p class="card-text">Pourquoi utiliser les bons éléments HTML? Les
-                            moteurs de recherche comprennent mieux.</p>
+                        <h5 class="card-title">Bootstrap Composants</h5>
+                        <p class="card-text">Bootstrap nous donne des cartes, navbars,
+                            boutons, et bien plus. Réutilisables.</p>
                         <a href="#" class="btn btn-primary">Lire plus</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Article 3 -->
+            <!-- Article 6 -->
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">CSS Responsive</h5>
-                        <p class="card-text">Faire un site qui marche sur tous les appareils.
-                            Flexbox et Media Queries.</p>
+                        <h5 class="card-title">Responsive Design</h5>
+                        <p class="card-text">Votre blog doit s'adapter aux téléphones. CSS
+                            Media Queries le font automatiquement.</p>
                         <a href="#" class="btn btn-primary">Lire plus</a>
                     </div>
                 </div>
-            </div>
-            
-                <!-- Articles cachés (montrés au clic du bouton) -->
-                <div class="row g-3 mt-3" id="articlesCachés">
-
-                    <!-- Article 4 -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">JavaScript Basics</h5>
-                                <p class="card-text">JavaScript rend votre site interactif. Écoutez
-                                    les clics, changez le contenu.</p>
-                                <a href="#" class="btn btn-primary">Lire plus</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 5 -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Bootstrap Composants</h5>
-                                <p class="card-text">Bootstrap nous donne des cartes, navbars,
-                                    boutons, et bien plus. Réutilisables.</p>
-                                <a href="#" class="btn btn-primary">Lire plus</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Article 6 -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Responsive Design</h5>
-                                <p class="card-text">Votre blog doit s'adapter aux téléphones. CSS
-                                    Media Queries le font automatiquement.</p>
-                                <a href="#" class="btn btn-primary">Lire plus</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Bouton pour charger plus d'articles -->
-            <div class="mt-5 text-center">
-                <button id="boutChargerPlus" class="btn btn-success btn-lg">Charger plus
-                    d'articles</button>
             </div>
         </div>
-        <script src="script.js"></script>
+    </div>
+    <!-- Bouton pour charger plus d'articles -->
+    <div class="mt-5 text-center">
+        <button id="boutChargerPlus" class="btn btn-success btn-lg">Charger plus
+            d'articles</button>
+    </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
