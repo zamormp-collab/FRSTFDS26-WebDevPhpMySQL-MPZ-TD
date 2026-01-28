@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr"> 
-                
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +25,12 @@
     <div class="container mt-5">
         <h1>Mon Blog</h1>
         <p>Bienvenue sur mon blog. Découvrez mes articles.</p>
+
         <!-- Section: Articles -->
         <h2 class="mt-5">Mes Articles</h2>
+
         <!-- Grille d'articles -->
-        <div class="row g-4 mt-4" id="conteneurArticles">
+        <div class="row g-3 mt-3" id="conteneurArticles">
 
             <!-- Article 1 -->
             <div class="col-md-4">
@@ -41,6 +43,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Article 2 -->
             <div class="col-md-4">
                 <div class="card">
@@ -52,7 +55,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Article 3 --> 
+
+            <!-- Article 3 -->
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
@@ -64,45 +68,52 @@
                 </div>
             </div>
 
-            <!-- Articles cachés (montrés au clic du bouton) -->
-            <div class="articles-cachés" id="articlesCachés">
-                <!-- Article 4 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">JavaScript Basics</h5>
-                            <p class="card-text">JavaScript rend votre site interactif. Écoutez
-                                les clics, changez le contenu.</p>
-                            <a href="#" class="btn btn-primary">Lire plus</a>
+            <!-- Conteneur qu'on va cacher avec CSS -->
+            <div class="articles-cachés">
+                
+                <!-- Articles cachés (montrés au clic du bouton) -->
+                <div class="row g-3 mt-3" id="articlesCachés">
+
+                    <!-- Article 4 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">JavaScript Basics</h5>
+                                <p class="card-text">JavaScript rend votre site interactif. Écoutez
+                                    les clics, changez le contenu.</p>
+                                <a href="#" class="btn btn-primary">Lire plus</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Article 5 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Bootstrap Composants</h5>
-                            <p class="card-text">Bootstrap nous donne des cartes, navbars,
-                                boutons, et bien plus. Réutilisables.</p>
-                            <a href="#" class="btn btn-primary">Lire plus</a>
+
+                    <!-- Article 5 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Bootstrap Composants</h5>
+                                <p class="card-text">Bootstrap nous donne des cartes, navbars,
+                                    boutons, et bien plus. Réutilisables.</p>
+                                <a href="#" class="btn btn-primary">Lire plus</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Article 6 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Responsive Design</h5>
-                            <p class="card-text">Votre blog doit s'adapter aux téléphones. CSS
-                                Media Queries le font automatiquement.</p>
-                            <a href="#" class="btn btn-primary">Lire plus</a>
+
+                    <!-- Article 6 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Responsive Design</h5>
+                                <p class="card-text">Votre blog doit s'adapter aux téléphones. CSS
+                                    Media Queries le font automatiquement.</p>
+                                <a href="#" class="btn btn-primary">Lire plus</a>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
