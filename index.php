@@ -98,39 +98,50 @@ le font automatiquement.",
             <?php
             endfor;
             ?>
-        
 
-        <!-- Articles cachés (affichés au clic du bouton) -->
-        <div class="row g-3 mt-3" id="articlesCachés">
-            <?php
-            // Boucle pour les articles 4-6 (cachés par défaut)
-            for ($i = 3; $i < count($articles); $i++):
-            ?>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo htmlspecialchars($articles[$i]["title"]); ?></h5>
-                            <p class="card-text"><?php echo htmlspecialchars($articles[$i]["excerpt"]); ?></p>
-                            <p class="card-text">
-                                <small class="text-muted">Catégorie: <?php echo htmlspecialchars($articles[$i]["category"]); ?></small>
-                            </p>
-                            <a href="#" class="btn btn-primary">Lire plus</a>
+
+            <!-- Articles cachés (affichés au clic du bouton) -->
+            <div class="row g-3 mt-3" id="articlesCachés">
+                <?php
+                // Boucle pour les articles 4-6 (cachés par défaut)
+                for ($i = 3; $i < count($articles); $i++):
+                ?>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo htmlspecialchars($articles[$i]["title"]); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($articles[$i]["excerpt"]); ?></p>
+                                <p class="card-text">
+                                    <small class="text-muted">Catégorie: <?php echo htmlspecialchars($articles[$i]["category"]); ?></small>
+                                </p>
+                                <a href="#" class="btn btn-primary">Lire plus</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php
-            endfor;
-            ?>
+                <?php
+                endfor;
+                ?>
+            </div>
+        </div>
+
+        <!-- Bouton pour charger plus d'articles -->
+        <div class="mt-5 text-center">
+            <button id="boutChargerPlus" class="btn btn-success btn-lg">Charger plus
+                d'articles</button>
         </div>
     </div>
-    
-    <!-- Bouton pour charger plus d'articles -->
-    <div class="mt-5 text-center">
-        <button id="boutChargerPlus" class="btn btn-success btn-lg">Charger plus
-            d'articles</button>
-    </div>
-    </div>
     <script src="script.js"></script>
+    
+    <?php
+    // Optionnel: Section de débogage (à retirer en production!)
+    echo "<hr>";
+    echo "<h3 style='color: gray; font-size: 0.9em;'>Débogage - Structure des
+        Articles:</h3>";
+    echo "<pre style='font-size: 0.8em; color: gray;'>";
+    var_dump($articles[0]);
+    echo "</pre>";
+    ?>
+
 </body>
 
 </html>
