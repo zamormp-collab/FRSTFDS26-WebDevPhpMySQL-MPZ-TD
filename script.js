@@ -1,33 +1,26 @@
-// Attendre que la page soit chargée
+// Blog v2 - Module 2 - JavaScript
 document.addEventListener('DOMContentLoaded', function() {
- console.log('✓ Page chargée, JavaScript fonctionne!');
- 
- // Trouver le bouton
- const boutChargerPlus = document.getElementById('boutChargerPlus');
- 
- // Trouver les articles cachés
- const articlesCachés = document.getElementById('articlesCachés');
- 
- // Variable pour tracker l'état (cachés ou visibles?)
- let articlesVisibles = false;
- 
- // Écouter les clics du bouton
- boutChargerPlus.addEventListener('click', function() {
- console.log('Bouton cliqué!');
- 
- // Si les articles sont cachés, les montrer
- if (articlesVisibles === false) {
- articlesCachés.style.display = 'contents';
- boutChargerPlus.textContent = 'Masquer les articles';
- articlesVisibles = true;
- console.log('Articles affichés');
- }
- // Si les articles sont visibles, les cacher
- else {
- articlesCachés.style.display = 'none';
- boutChargerPlus.textContent = 'Charger plus d\'articles';
- articlesVisibles = false;
- console.log('Articles cachés');
- }
- });
+console.log('📝 Blog v2 Module 2 loaded');
+console.log('✓ Concept: Articles générés en PHP, affichés avec for loops');
+
+// Ajouter la fonctionnalité du bouton "Charger plus"
+initializerBoutChargerPlus();
 });
+
+/**
+* Initialiser le bouton "Charger plus d'articles"
+*/
+function initializerBoutChargerPlus() {
+const bout = document.getElementById('boutChargerPlus');
+const articlesCachés = document.getElementById('articlesCachés');
+    if (bout && articlesCachés) {
+        bout.addEventListener('click', function() {
+        // Afficher les articles cachés
+        articlesCachés.style.display = 'contents';
+        // Changer le texte du bouton
+        bout.textContent = '✓ Articles chargés!';
+        bout.disabled = true;
+        console.log('✓ Plus d\'articles affichés');
+        });
+    }
+}

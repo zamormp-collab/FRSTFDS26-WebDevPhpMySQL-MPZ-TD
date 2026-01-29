@@ -98,48 +98,32 @@ le font automatiquement.",
             <?php
             endfor;
             ?>
-        </div>
+        
 
-        <!-- Articles cachés (montrés au clic du bouton) -->
+        <!-- Articles cachés (affichés au clic du bouton) -->
         <div class="row g-3 mt-3" id="articlesCachés">
-
-            <!-- Article 4 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">JavaScript Basics</h5>
-                        <p class="card-text">JavaScript rend votre site interactif. Écoutez
-                            les clics, changez le contenu.</p>
-                        <a href="#" class="btn btn-primary">Lire plus</a>
+            <?php
+            // Boucle pour les articles 4-6 (cachés par défaut)
+            for ($i = 3; $i < count($articles); $i++):
+            ?>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($articles[$i]["title"]); ?></h5>
+                            <p class="card-text"><?php echo htmlspecialchars($articles[$i]["excerpt"]); ?></p>
+                            <p class="card-text">
+                                <small class="text-muted">Catégorie: <?php echo htmlspecialchars($articles[$i]["category"]); ?></small>
+                            </p>
+                            <a href="#" class="btn btn-primary">Lire plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Article 5 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Bootstrap Composants</h5>
-                        <p class="card-text">Bootstrap nous donne des cartes, navbars,
-                            boutons, et bien plus. Réutilisables.</p>
-                        <a href="#" class="btn btn-primary">Lire plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Article 6 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Responsive Design</h5>
-                        <p class="card-text">Votre blog doit s'adapter aux téléphones. CSS
-                            Media Queries le font automatiquement.</p>
-                        <a href="#" class="btn btn-primary">Lire plus</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+            endfor;
+            ?>
         </div>
     </div>
+    
     <!-- Bouton pour charger plus d'articles -->
     <div class="mt-5 text-center">
         <button id="boutChargerPlus" class="btn btn-success btn-lg">Charger plus
